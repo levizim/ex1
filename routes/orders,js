@@ -1,0 +1,15 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET orders listing. */
+router.get('/', function(req, res, next) {
+  res.send('List of all orders');
+});
+
+/* GET specific order details */
+router.get('/:orderId', function(req, res, next) {
+  const orderId = req.params.orderId;
+  res.send(`Details for order ID: ${orderId}`);
+});
+
+module.exports = router;
